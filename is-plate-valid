@@ -1,0 +1,5 @@
+#!/bin/bash
+
+URL='https://edmv.ncdot.gov/VehicleRegistration/SpecialPlate/IsPlateValid'
+
+curl -sd "ID=4&PlateNumber=${1}" "$URL" | grep -c '^{"Result":true'
