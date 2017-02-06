@@ -1,6 +1,6 @@
-It's purpose in life is to tell you if the first argument to the script is a
-valid North Carolina license plate.  It returns a bool exit status for use in
-scripting.
+Its [purpose in life](https://youtu.be/X7HmltUWXgs?t=53s) is to tell you if the
+first argument to the script is a valid North Carolina license plate.  It
+returns a bool exit status for use in scripting.
 
 Usage:
 ```
