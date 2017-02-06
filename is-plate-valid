@@ -1,5 +1,17 @@
 #!/bin/bash
 
+# Checks if a standard North Carolina license plate is valid and available.
+# Prints "Yes" and returns 1 if it is, otherwise prints "No" and returns 0.
+
 URL='https://edmv.ncdot.gov/VehicleRegistration/SpecialPlate/IsPlateValid'
 
-curl -sd "ID=4&PlateNumber=${1}" "$URL" | grep -c '^{"Result":true'
+curl -sd "ID=4&PlateNumber=${1}" "$URL" | grep -q '^{"Result":true'
+
+MATCHED=$?
+if [ "${MATCHED}" == 0 ]; then
+  echo Yes
+  exit 1
+fi
+
+echo No
+exit 0
